@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>User Form</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #89f7fe 0%, #66a6ff 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .container {
+      background: #fff;
+      padding: 2rem;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      animation: slideIn 1s ease forwards;
+      transform: translateY(50px);
+      opacity: 0;
+      width: 100%;
+      max-width: 400px;
+    }
+
+    @keyframes slideIn {
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    h2 {
+      margin-bottom: 1rem;
+      color: #333;
+      font-size: 1.5rem;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: bold;
+      text-align: left;
+      font-size: 0.95rem;
+    }
+
+    input[type="text"] {
+      width: 100%;
+      padding: 0.75rem;
+      margin-bottom: 1.2rem;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      outline: none;
+      transition: border 0.3s;
+      font-size: 1rem;
+    }
+
+    input[type="text"]:focus {
+      border-color: #66a6ff;
+    }
+
+    input[type="submit"] {
+      background-color: #66a6ff;
+      color: white;
+      border: none;
+      padding: 0.75rem 2rem;
+      border-radius: 50px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background 0.3s;
+      font-size: 1rem;
+      width: 100%;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #89f7fe;
+    }
+
+    .graphic {
+      width: 80px;
+      margin: 0 auto 20px;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0px);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        padding: 1.5rem;
+        border-radius: 15px;
+      }
+
+      h2 {
+        font-size: 1.3rem;
+      }
+
+      input[type="text"], input[type="submit"] {
+        font-size: 0.95rem;
+        padding: 0.7rem;
+      }
+
+      .graphic {
+        width: 70px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="graphic">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="#66a6ff">
+        <path d="M32 2C16.54 2 4 14.54 4 30s12.54 28 28 28 28-12.54 28-28S47.46 2 32 2zm0 52c-13.23 0-24-10.77-24-24S18.77 6 32 6s24 10.77 24 24-10.77 24-24 24z"/>
+        <path d="M32 16c-7.73 0-14 6.27-14 14s6.27 14 14 14 14-6.27 14-14-6.27-14-14-14zm0 24c-5.52 0-10-4.48-10-10s4.48-10 10-10 10 4.48 10 10-4.48 10-10 10z"/>
+      </svg>
+    </div>
+
+    <h2>Enter User Details</h2>
+    <form method="POST">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="id">ID:</label>
+      <input type="text" id="id" name="id" required>
+
+      <label for="email">Email:</label>
+      <input type="text" id="email" name="email" required>
+
+      <input type="submit" value="Submit">
+    </form>
+  </div>
+
+</body>
+</html>
